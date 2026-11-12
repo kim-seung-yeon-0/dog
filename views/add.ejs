@@ -3,37 +3,31 @@
 <!-- /include header -->
 
   <!-- Main -->
-    <main id="site-main">
+  <main id="site-main">
+    <div class="card form-card">
       <div class="button-box">        
-        <a href="/contacts" class="btn btn-light"><i class="fa-solid fa-list"></i>연락처 목록</a>
+        <h2>연락처 추가</h2>
+        <a href="/contacts" class="btn btn-secondary">← 목록으로</a>
       </div>
-      </div>
-      <h2>연락처 추가</h2>          
-      <p>연락처 정보를 추가합니다.</p>
+      <p>새로운 연락처 정보를 입력하세요.</p>
+      
       <form action="/contacts/add" method="POST" id="add-user">
-        <div class="user-info">
-          <div class="col-12">
-            <label for="name" class="col-form-label">이름(Full Name)</label>
-            <div>
-              <input type="text" class="form-control" name="name" id="name" placeholder="홍길동">
-            </div>
-          </div>
-          <div class="col-12">
-            <label for="email" class="col-form-label">메일 주소(E-mail)</label>
-            <div>
-              <input type="text" class="form-control" name="email" id="email" placeholder="hong@abc.def">
-            </div>
-          </div>
-          <div class="col-12">
-            <label for="phone" class="col-form-label">전화번호(Mobile)</label>
-            <div>
-              <input type="text" class="form-control" name="phone" id="phone" placeholder="123-4567-8901">
-            </div>
-          </div>
-          <button type="submit">저장하기</button>
+        <div class="form-group">
+          <label for="name">이름 (Full Name)</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="홍길동" required>
         </div>
+        <div class="form-group">
+          <label for="email">이메일 (E-mail)</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="hong@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">전화번호 (Mobile)</label>
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="010-1234-5678" required>
+        </div>
+        <button type="submit" class="btn btn-primary">저장하기</button>
       </form>   
-    </main>
+    </div>
+  </main>
   <!-- /Main -->
 
 <!-- include footer -->

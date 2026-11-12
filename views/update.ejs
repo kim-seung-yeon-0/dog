@@ -1,41 +1,35 @@
 <!-- include header -->
 <%- include('./include/_header') %>
-<!-- /include header -->
+  <!-- /include header -->
 
   <!-- Main -->
-    <main id="site-main">
-      <div class="button-box">        
-        <a href="/contacts" class="btn btn-light"><i class="fa-solid fa-list"></i>연락처 목록</a>
+  <main id="site-main">
+    <div class="card form-card">
+      <div class="button-box">
+        <h2>연락처 수정</h2>
+        <a href="/contacts" class="btn btn-secondary">← 목록으로</a>
       </div>
-      <h2>연락처 수정</h2>          
       <p>연락처 정보를 수정합니다.</p>
-      <form action="/contacts/<%= contact._id %>?_method=PUT" method="POST" id="add-user" >
-        <div class="user-info">
-          <div class="col-12">
-            <label for="name" class="col-form-label">이름(Full Name)</label>
-            <div>
-              <input type="text" class="form-control" name="name" id="name" value="<%= contact.name %>">
-            </div>
-          </div>
-          <div class="col-12">
-            <label for="email" class="col-form-label">메일 주소(E-mail)</label>
-            <div>
-              <input type="text" class="form-control" name="email" id="email" value="<%= contact.email %>">
-            </div>
-          </div>
-          <div class="col-12">
-            <label for="phone" class="col-form-label">전화번호(Mobile)</label>
-            <div>
-              <input type="text" class="form-control" name="phone" id="phone" value="<%= contact.phone %>">
-            </div>
-          </div>
-          <button type="submit">수정하기</button>
-        </div>
-      </form>   
-    </main>
 
+      <form action="/contacts/<%= contact._id %>?_method=PUT" method="POST" id="add-user">
+        <div class="form-group">
+          <label for="name">이름 (Full Name)</label>
+          <input type="text" class="form-control" name="name" id="name" value="<%= contact.name %>" required>
+        </div>
+        <div class="form-group">
+          <label for="email">이메일 (E-mail)</label>
+          <input type="email" class="form-control" name="email" id="email" value="<%= contact.email %>">
+        </div>
+        <div class="form-group">
+          <label for="phone">전화번호 (Mobile)</label>
+          <input type="text" class="form-control" name="phone" id="phone" value="<%= contact.phone %>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">수정 완료</button>
+      </form>
+    </div>
+  </main>
   <!-- /Main -->
 
-<!-- include footer -->
-<%- include('./include/_footer') %>
-<!-- /include footer -->
+  <!-- include footer -->
+  <%- include('./include/_footer') %>
+    <!-- /include footer -->
